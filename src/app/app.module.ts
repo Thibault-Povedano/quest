@@ -4,12 +4,12 @@ import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { SignupComponent } from './signup/signup.component';
+import { CocktailListComponent } from './cocktail-list-component/cocktail-list-component.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SignupComponent
+    CocktailListComponent,
   ],
   imports: [
     BrowserModule,
