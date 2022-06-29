@@ -9,30 +9,27 @@ import { User } from '../models/user.model';
 })
 export class UserComponent implements OnInit {
 
+  result: string[] = [];
 
-  userForm = this.fb.group({
-    username: ['']
-});
 
-  mail = new FormControl('');
-  password = new FormControl('');
-  street = new FormControl('');
-  city = new FormControl('');
-  zipCode = new FormControl('');
+  userForm = this.userFormBuilder.group({
+    username: [''],
+    credentials: this.userFormBuilder.group({
+      mail: [''],
+      password: [''],
+    }),
+    address: this.userFormBuilder.group({
+      street: [''],
+      city: [''],
+      zipCode: ['']
+    }),
+  });
 
-  constructor(private fb: FormBuilder) { }
 
-  // subscription() {
-  //   this.user.push(new User(this.userName.value!,
-  //     this.mail.value!,
-  //     this.password.value!,
-  //     this.street.value!,
-  //     this.city.value!,
-  //     this.zipCode.value!))
-  //   console.log(this.user)
-  // }
+  constructor(private userFormBuilder: FormBuilder) { }
 
-  onSubmit(){
+
+  onSubmit() {
     console.log(this.userForm.value)
   }
 
