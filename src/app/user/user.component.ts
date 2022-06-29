@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
-import { User } from '../models/user.model';
+import { FormBuilder } from '@angular/forms';
+
 
 @Component({
   selector: 'app-user',
@@ -25,9 +25,7 @@ export class UserComponent implements OnInit {
     }),
   });
 
-
   constructor(private userFormBuilder: FormBuilder) { }
-
 
   onSubmit() {
     console.log(this.userForm.value)
