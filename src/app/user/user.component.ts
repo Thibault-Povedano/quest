@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
-
+import { FormBuilder, RequiredValidator } from '@angular/forms';
+import { emailValidator } from './email.validator';
 
 @Component({
   selector: 'app-user',
@@ -11,11 +11,10 @@ export class UserComponent implements OnInit {
 
   result: string[] = [];
 
-
   userForm = this.userFormBuilder.group({
     username: [''],
     credentials: this.userFormBuilder.group({
-      mail: [''],
+      email: ['', [emailValidator]],
       password: [''],
     }),
     address: this.userFormBuilder.group({
@@ -29,10 +28,10 @@ export class UserComponent implements OnInit {
 
   onSubmit() {
     console.log(this.userForm.value)
-  }
+  };
 
   ngOnInit(): void {
     console.log()
-  }
+  };
 
 }
