@@ -1,0 +1,50 @@
+<form (ngSubmit)="signupForm.form.valid && onSubmit()" #signupForm="ngForm" novalidate>
+
+  <div>
+      <label for="firstname">Firstname </label>
+      <input type="text" name="firstname" [(ngModel)]="model.firstname" #firstname="ngModel" [ngClass]= "{ 'is-invalid': signupForm.submitted && firstname.invalid }"  required minlength="3" maxlength="15">
+  </div>
+
+  <!-- Message d'erreurs -->
+<div *ngIf="signupForm.submitted && firstname.invalid" >
+  <span *ngIf="firstname.errors?.['required']" >Le firstname est requis</span>
+  <span *ngIf="firstname.errors?.['minlength']" >Le prénom doit comporter au moins 3 caractères</span>
+  <span *ngIf="firstname.errors?.['maxlength']">Le prénom ne doit pas dépasser 15 caractères</span>
+</div>
+
+<div>
+  <label for="lastname">Lastname </label>
+  <input type="text" name="lastname" [(ngModel)]="model.lastname" #lastname="ngModel" [ngClass]= "{ 'is-invalid': signupForm.submitted && lastname.invalid }" required minlength="3" maxlength="15">
+</div>
+
+<!-- Message d'erreurs -->
+  <div *ngIf="signupForm.submitted && lastname.invalid">
+      <span *ngIf="lastname.errors?.['required']">Le firstname est requis</span>
+      <span *ngIf="lastname.errors?.['minlength']">Le nom doit comporter au moins 3 caractères</span>
+      <span *ngIf="lastname.errors?.['maxlength']">Le nom ne doit pas dépasser 15 caractères</span>
+  </div>
+
+  <div>
+      <label for="email">Email </label>
+      <input type="email" name="email" [(ngModel)]="model.mail" #email="ngModel" [ngClass]= "{ 'is-invalid': signupForm.submitted && email.invalid }" required email>
+  </div>
+
+  <div *ngIf="signupForm.submitted && email.invalid">
+      <span *ngIf="email.errors?.['required']">L'email est requis</span>
+      <span *ngIf="email.errors?.['email']">L'email est invalide</span>
+  </div>
+
+  <div>
+      <label for="password">Password </label>
+      <input type="password" name="password" [(ngModel)]="model.password" #password="ngModel" [ngClass]= "{ 'is-invalid': signupForm.submitted && password.invalid }" required password>
+  </div>
+
+  <div *ngIf="signupForm.submitted && password.invalid">
+      <span *ngIf="password.errors?.['required']">Le password est requis</span>
+      <span *ngIf="password.errors?.['password']">L'adresse password doit être valide</span>
+  </div>
+
+  <button type="submit">Envoyer</button>
+
+
+</form>
