@@ -1,4 +1,19 @@
-<form action="">
-  identifiant<input type="text" name="" id="">
-  mail<input type="email" name="" id="">
-</form>
+<div>
+  <label>
+  <div> username<input type="text" name="" id=""  [formControl]="userName"></div>
+  <div>mail<input type="email" name="" id="" [formControl]="mail"></div>
+  <div>password<input type="email" name="" id="" [formControl]="password"></div>
+  <div>street<input type="email" name="" id="" [formControl]="street"></div>
+  <div>city<input type="email" name="" id="" [formControl]="city"></div>
+  <div>zipCode<input type="email" name="" id="" [formControl]="zipCode"></div>
+  <button (click)="subscription()">Inscription</button>
+  </label>
+
+   <h1> L'utilisateur est inscrit est:</h1>
+  <p> Nom: {{user[0].userName}}</p>
+  <p>Mail: {{user[0].email}}</p>
+  <p>Password (en clair sinon c'pas drole): {{user[0].password}}</p>
+  <p>Street: {{user[0].street}}</p>
+  <p>City: {{user[0].city}}</p>
+  <p>ZipCode: {{user[0].zipCode}}</p>
+</div>
