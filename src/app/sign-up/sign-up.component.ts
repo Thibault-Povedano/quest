@@ -13,9 +13,7 @@ export class SignUpComponent implements OnInit {
   constructor() { }
 
   onSubmit() {
-    // form submitted
-    alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.model)
-    )
+
   }
 
   ngOnInit(): void {
