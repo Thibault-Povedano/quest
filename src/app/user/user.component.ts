@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
 import { User } from '../models/user.model';
 
 @Component({
@@ -9,26 +9,32 @@ import { User } from '../models/user.model';
 })
 export class UserComponent implements OnInit {
 
-  user: User[] = [];
 
-  userName = new FormControl('');
+  userForm = this.fb.group({
+    username: ['']
+});
+
   mail = new FormControl('');
   password = new FormControl('');
   street = new FormControl('');
   city = new FormControl('');
   zipCode = new FormControl('');
 
-  subscription() {
-    this.user.push(new User(this.userName.value!,
-      this.mail.value!,
-      this.password.value!,
-      this.street.value!,
-      this.city.value!,
-      this.zipCode.value!))
-    console.log(this.user)
-  }
+  constructor(private fb: FormBuilder) { }
 
-  constructor() { }
+  // subscription() {
+  //   this.user.push(new User(this.userName.value!,
+  //     this.mail.value!,
+  //     this.password.value!,
+  //     this.street.value!,
+  //     this.city.value!,
+  //     this.zipCode.value!))
+  //   console.log(this.user)
+  // }
+
+  onSubmit(){
+    console.log(this.userForm.value)
+  }
 
   ngOnInit(): void {
     console.log()
