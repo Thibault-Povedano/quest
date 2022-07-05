@@ -1,0 +1,28 @@
+[
+{
+  "name":"Cocktail 1",
+  "price":"100$",
+  "img":"https://www.saq.com/media/magefan_blog/art-cocktails-2022-shutterstock_1838109799-900x675.jpg"
+},
+{
+  "name":"Cocktail 2",
+  "price":"100$",
+  "img":"https://www.saq.com/media/magefan_blog/art-cocktails-2022-shutterstock_1838109799-900x675.jpg"
+},
+{
+  "name":"Cocktail 3",
+  "price":"100$",
+  "img":"https://www.saq.com/media/magefan_blog/art-cocktails-2022-shutterstock_1838109799-900x675.jpg"
+},
+{
+  "name":"Cocktail 4",
+  "price":"100$",
+  "img":"https://www.saq.com/media/magefan_blog/art-cocktails-2022-shutterstock_1838109799-900x675.jpg"
+},
+{
+  "name":"Cocktail 5",
+  "price":"100$",
+  "img":"https://www.sauce-piquante.fr/modules/prestatemplatev2/page-builder/wp-content/uploads/chipotle-cocktail.jpg"
+}
+
+]

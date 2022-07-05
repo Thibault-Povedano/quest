@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { CocktailService } from './Cocktail.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'quest';
+  public title = 'quest';
+  private service: CocktailService;
+
+  constructor(param_service: CocktailService) {
+    this.service = param_service;
+  }
 }
